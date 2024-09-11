@@ -1,19 +1,23 @@
-import type { Config } from "tailwindcss";
+import sharedConfig from '@fucina/tailwind/tailwind.config';
+import type { Config } from 'tailwindcss';
 
-const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+const config: Pick<Config, 'presets'> = {
+  presets: [
+    {
+      ...sharedConfig,
+      content: [
+        './app/**/*.tsx',
+        './components/**/*.tsx',
+        './node_modules/@fucina/ui/dist/**/*.mjs',
+        './node_modules/@fucina/utils/dist/**/*.mjs',
+      ],
+      theme: {
+        extend: {
+          ...sharedConfig?.theme?.extend,
+        },
       },
     },
-  },
-  plugins: [],
+  ],
 };
+
 export default config;
