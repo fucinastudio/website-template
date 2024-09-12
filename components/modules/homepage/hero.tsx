@@ -25,7 +25,7 @@ export default function Hero() {
           </p>
         </div>
         <div className="mt-10">
-          <Button asChild>
+          <Button asChild className="font-brand font-medium text-lg">
             <Link href="/signup">Start for free</Link>
           </Button>
         </div>

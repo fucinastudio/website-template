@@ -1,14 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { cn } from '@fucina/utils';
+
 interface LogoProps {
   url: string;
   title: string;
+  className?: string;
 }
 
-export default function Logo({ url, title }: LogoProps) {
+export default function Logo({ url, title, className }: LogoProps) {
   return (
-    <div className="cursor-pointer">
+    <div className={cn("cursor-pointer", className)}>
       <Link href={url}>
         <div className="flex justify-center items-center gap-2">
           <svg

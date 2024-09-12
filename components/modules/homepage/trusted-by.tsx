@@ -14,7 +14,7 @@ export default function TrustedBy() {
       className="relative z-20 bg-gradient-to-b from-white/0 to-fuchsia-600/[0.07] w-screen"
     >
       <div className="mx-auto px-5 sm:px-6 pt-20 pb-24 sm:pb-32 max-w-screen-lg text-center container">
-        <p className="text-description text-md">
+        <p className="mx-auto max-w-screen-md text-description text-lg">
           You may not know them - they&apos;re just starting their skyrocket era
           - but we&apos;re actually making their job easier and more productive
         </p>
