@@ -68,12 +68,13 @@ export default function WaitlistForm() {
 
     // API request to add user to newsletter
     fetch(`https://${domain}/api/newsletter-form/${formStyles.id}`, {
-      method: "POST",
+      method: 'POST',
       body: formBody,
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
     })
+      /* eslint-disable @typescript-eslint/no-explicit-any */
       .then((res: any) => [res.ok, res.json(), res])
       .then(([ok, dataPromise, res]) => {
         if (ok) {
@@ -83,19 +84,22 @@ export default function WaitlistForm() {
           dataPromise.then((data: any) => {
             setFormState(ERROR);
             setErrorMessage(data.message || res.statusText);
-            localStorage.setItem("loops-form-timestamp", "");
+            localStorage.setItem('loops-form-timestamp', '');
           });
         }
       })
+      /* eslint-enable @typescript-eslint/no-explicit-any */
       .catch((error) => {
         setFormState(ERROR);
         // check for cloudflare error
-        if (error.message === "Failed to fetch") {
-          setErrorMessage("Too many signups, please try again in a little while");
+        if (error.message === 'Failed to fetch') {
+          setErrorMessage(
+            'Too many signups, please try again in a little while'
+          );
         } else if (error.message) {
           setErrorMessage(error.message);
         }
-        localStorage.setItem("loops-form-timestamp", "");
+        localStorage.setItem('loops-form-timestamp', '');
       });
   };
 
@@ -140,13 +144,17 @@ export default function WaitlistForm() {
                   <b>wait a minute and try again</b>.
                 </p>
               </div>
-              <Button className="w-fit font-brand font-medium text-lg" onClick={resetForm}>
+              <Button
+                className="w-fit font-brand font-medium text-lg"
+                onClick={resetForm}
+              >
                 Okay, I&apos;ll go back
               </Button>
             </div>
+            {errorMessage && <></>}
           </div>
         </>
-    );
+      );
     default:
       return (
         <>
@@ -210,6 +218,7 @@ export default function WaitlistForm() {
   }
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 function isValidEmail(email: any) {
   return /.+@.+/.test(email);
 }
