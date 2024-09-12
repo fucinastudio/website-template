@@ -11,7 +11,7 @@ export default function Navbar() {
       className="top-0 left-0 z-50 fixed flex items-center bg-background border-b border-b-default w-screen h-14"
     >
       <div className="flex justify-between items-center mx-auto px-4 sm:px-6 w-full max-w-screen-xl">
-        <Logo url="/" title="Website Template" />
+        <Logo />
         <div className="flex items-center space-x-1.5">
           <Button
             variant="secondary"

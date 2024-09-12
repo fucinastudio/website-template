@@ -14,11 +14,10 @@ export default function Banner() {
       <div className="relative z-20 mx-auto px-10 py-20 max-w-screen-lg text-center container">
         <div className="gap-5 sm:gap-6 grid">
           <h1 className="font-brand font-medium text-4xl sm:text-5xl">
-            <span className="brand-gradient">User feedbacks</span> get real by
-            being rewarded
+            <span className="brand-gradient">Lorem</span> ipsum
           </h1>
           <p className="text-description text-lg">
-            Build a product for your people. And they will feel part of it.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
         <div className="mt-8 sm:mt-10">

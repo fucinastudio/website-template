@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { cn } from "@fucina/utils";
-import Logo from "@/components/logo";
-import GridPattern from "@/components/grid-pattern";
+import { cn } from '@fucina/utils';
+import Logo from '@/components/logo';
+import GridPattern from '@/components/grid-pattern';
 
 export default function RootLayout({
   children,
@@ -11,11 +11,7 @@ export default function RootLayout({
 }>) {
   return (
     <main className="w-screen h-screen">
-      <Logo
-        url="/"
-        title="Website Template"
-        className="top-6 left-6 z-50 absolute"
-      />
+      <Logo className="top-6 left-6 z-50 absolute" />
       {children}
       <GridPattern
         width={32}
